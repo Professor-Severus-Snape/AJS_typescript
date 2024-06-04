@@ -10,6 +10,12 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   root: true,
   rules: {
-    'no-console': 'off', // временное отключение правила
+    semi: 'off', // конфликт airbnb с typescript ???
+    'no-console': 'off', // для отладки
+    'no-underscore-dangle': 'off', // конфликт airbnb с typescript ???
+    'import/no-unresolved': 'off', // конфликт airbnb с typescript ???
+    'import/extensions': ['error', 'ignorePackages', { '': 'never', ts: 'never' }], // конфликт airbnb с typescript ???
+    'no-useless-constructor': 'off', // временное отключение правила
+    'no-empty-function': 'off', // временное отключение правила
   },
 };
