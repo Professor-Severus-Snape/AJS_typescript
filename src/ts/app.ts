@@ -25,5 +25,19 @@ console.log(cart.items); // массив товаров из трёх объек
 // [
 //   { id: 1001, name: "War and Piece", price: 2000, author: "Leo Tolstoy", pages: 1225 },
 //   { id: 1008, name: "Meteora", price: 900, author: "Linkin Park" },
-//   { id: 1111, name: "The Avengers", price: 500, year: 2012, country: "USA", slogan: "Avengers Assemble!", ...},
+//   { id: 1111, name: "The Avengers", price: 500, year: 2012, country: "USA", ...},
 // ]
+
+console.log('Общая сумма покупок (без скидок): ', cart.getTotalCost()); // 3_400
+console.log('Общая сумма покупок (со скидкой 5%): ', cart.getDiscountTotalCost(5)); // 3_230
+console.log('Общая сумма покупок (со скидкой 50%): ', cart.getDiscountTotalCost(50)); // 1_700
+
+cart.remove(1111); // удаление товара по идентификатору
+console.log(cart.items); // массив товаров из двух объектов
+
+cart.remove(666); // попытка удаления не добавленного в корзину товара
+console.log(cart.items); // массив товаров из двух объектов
+
+console.log('Общая сумма покупок (без скидок): ', cart.getTotalCost()); // 2_900
+console.log('Общая сумма покупок (со скидкой 10%): ', cart.getDiscountTotalCost(10)); // 2_610
+console.log('Общая сумма покупок (со скидкой 50%): ', cart.getDiscountTotalCost(50)); // 1_450
