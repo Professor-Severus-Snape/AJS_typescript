@@ -4,6 +4,11 @@ export default class Cart {
   private _items: Buyable[] = []; // Buyable[] - массив элементов типа Buyable | this._items = [];
 
   add(item: Buyable): void {
+    if (item.constructor.name !== 'Laptop' && item.constructor.name !== 'Smartphone') {
+      if (this._items.some((el) => el.id === item.id)) {
+        return;
+      }
+    }
     this._items.push(item);
   }
 
