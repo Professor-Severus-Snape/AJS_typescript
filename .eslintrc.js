@@ -14,7 +14,7 @@ module.exports = {
   root: true,
   rules: {
     'no-console': 'off', // для отладки
-    // т.к. хотим перед приватными свойствами класса добавлять _
-    'no-underscore-dangle': ['error', { allowAfterThis: true }],
+    // добавление нижнего подчеркивания перед приватными свойствами класса:
+    // 'no-underscore-dangle': ['error', { allowAfterThis: true }],
   },
 };
