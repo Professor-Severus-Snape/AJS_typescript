@@ -5,17 +5,16 @@ module.exports = {
     es2023: true, // стандарт ECMAScript 2023 (ES14)
     jest: true, // для корректной работы ESLint с Jest
   },
-  extends: ['airbnb-base', 'plugin:@typescript-eslint/recommended'],
+  extends: ['airbnb-base', 'plugin:@typescript-eslint/recommended', 'airbnb-typescript/base'],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   plugins: ['@typescript-eslint'],
   root: true,
   rules: {
-    semi: 'off', // конфликт airbnb с typescript ???
     'no-console': 'off', // для отладки
-    'no-underscore-dangle': 'off', // конфликт airbnb с typescript ???
-    'import/no-unresolved': 'off', // конфликт airbnb с typescript ???
-    'import/extensions': ['error', 'ignorePackages', { '': 'never', ts: 'never' }], // конфликт airbnb с typescript ???
-    'no-useless-constructor': 'off', // временное отключение правила
-    'no-empty-function': 'off', // временное отключение правила
+    // т.к. хотим перед приватными свойствами класса добавлять _
+    'no-underscore-dangle': ['error', { allowAfterThis: true }],
   },
 };
