@@ -5,14 +5,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(?:js|ts)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'ts-loader',
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
