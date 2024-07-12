@@ -6,7 +6,8 @@
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*.ts", "src/**/*.js", ".eslintrc.js"],
   "exclude": ["node_modules", "dist"]
